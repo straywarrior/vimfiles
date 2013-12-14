@@ -5,6 +5,8 @@ syntax on
 filetype plugin indent on
 set nu
 set laststatus=2
+set incsearch
+set hlsearch
 
 " Tab
 set tabstop=4
@@ -19,3 +21,6 @@ nn <silent> <F10> :Gstatus<cr>
 
 " Autocmds
 autocmd BufEnter * silent! lcd %:p:h
+
+" Php indenting
+:let g:PHP_default_indenting = 1
