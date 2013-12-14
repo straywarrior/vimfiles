@@ -22,5 +22,8 @@ nn <silent> <F10> :Gstatus<cr>
 " Autocmds
 autocmd BufEnter * silent! lcd %:p:h
 
-" Php indenting
+" Web source indenting
+autocmd FileType javascript,html,css,php set sw=2
+autocmd FileType javascript,html,css,php set ts=2
+autocmd FileType javascript,html,css,php set sts=2
 :let g:PHP_default_indenting = 1
