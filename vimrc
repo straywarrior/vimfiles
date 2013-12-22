@@ -8,6 +8,12 @@ set laststatus=2
 set incsearch
 set hlsearch
 
+" Clipboard
+if has('unix')
+    set clipboard=unnamedplus
+elseif has('windows')
+    set clipboard=unnamed
+
 " Tab
 set tabstop=4
 set shiftwidth=4
