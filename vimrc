@@ -13,6 +13,7 @@ if has('unix')
     set clipboard=unnamedplus
 elseif has('windows')
     set clipboard=unnamed
+endif
 
 " Tab
 set tabstop=4
@@ -29,9 +30,9 @@ nn <silent> <F10> :Gstatus<cr>
 autocmd BufEnter * silent! lcd %:p:h
 
 " Web source indenting
-autocmd FileType javascript,html,css,php set sw=2
-autocmd FileType javascript,html,css,php set ts=2
-autocmd FileType javascript,html,css,php set sts=2
+autocmd FileType xml,javascript,html,css,php set sw=2
+autocmd FileType xml,javascript,html,css,php set ts=2
+autocmd FileType xml,javascript,html,css,php set sts=2
 :let g:PHP_default_indenting = 1
 
 " Cscope
