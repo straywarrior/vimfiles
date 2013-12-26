@@ -57,3 +57,6 @@ if has("cscope")
     nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
     nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 endif
+
+" Markdown
+let g:vim_markdown_folding_disabled=1
