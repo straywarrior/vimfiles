@@ -9,10 +9,10 @@ set incsearch
 set hlsearch
 
 " Clipboard
-if has('unix')
-    set clipboard=unnamedplus
-elseif has('windows')
+if has('windows')
     set clipboard=unnamed
+elseif has('unix')
+    set clipboard=unnamedplus
 endif
 
 " Tab
