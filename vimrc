@@ -69,3 +69,6 @@ let Tlist_Use_Right_Window = 1
 let Tlist_File_Fold_Auto_Close = 1
 
 nmap <silent> <leader>tt :TlistToggle<CR>
+
+" Xmledit
+let g:xmledit_enable_html = 1
