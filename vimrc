@@ -72,3 +72,6 @@ nmap <silent> <leader>tt :TlistToggle<CR>
 
 " Xmledit
 let g:xmledit_enable_html = 1
+
+" Slimv
+let g:paredit_mode=0
