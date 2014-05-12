@@ -74,8 +74,8 @@ nmap <silent> <leader>tt :TlistToggle<CR>
 let g:xmledit_enable_html = 1
 
 " Slimv
-let g:paredit_mode=0
-let g:slimv_swank_scheme = '! urxvtc -e guile -l ~/.vim/bundle/slimv/slime/start-swank.lisp &'
+" let g:paredit_mode=0
+" let g:slimv_swank_scheme = '! urxvtc -e guile -l ~/.vim/bundle/slimv/slime/start-swank.lisp &'
 
 " Gitgutter
 let g:gitgutter_enabled = 0
