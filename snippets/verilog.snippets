@@ -1,0 +1,39 @@
+# using
+snippet us
+	using namespace ${0};
+##
+
+# begin
+snippet begin
+	begin
+		${0};
+	end
+##
+
+# always    " always @() begin ... end
+snippet always 
+	always @(${1}) begin
+		${0}
+	end
+##
+
+# if    " if () begin ... end
+snippet if
+	if (${1}) begin
+	    ${0}
+	end
+##
+
+# else    " else begin ... end
+snippet else
+	else begin
+	    ${0}
+	end
+##
+
+# else if    " else if () begin ... end
+snippet elif
+	else if (${1}) begin
+	    ${0}
+	end
+##
