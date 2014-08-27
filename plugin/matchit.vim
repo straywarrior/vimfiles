@@ -1,1 +1,1 @@
-source $VIM/vim74/macros/matchit.vim
+source $VIMRUNTIME/macros/matchit.vim
