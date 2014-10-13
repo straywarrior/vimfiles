@@ -27,6 +27,9 @@ let mapleader = ","
 nn <silent> <F10> :Gstatus<cr>
 nmap <silent> <leader>ee :e ~/.vim/vimrc<cr>
 
+" Unite
+nnoremap <C-P> :Unite -start-insert file<cr>
+
 " Autocmds
 autocmd BufEnter * silent! lcd %:p:h
 
