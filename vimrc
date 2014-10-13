@@ -24,8 +24,6 @@ set expandtab
 
 " Key bindings
 let mapleader = ","
-"nn <silent> <F11> :<c-u>MRU<cr>
-nn <silent> <F11> :MRU<cr>
 nn <silent> <F10> :Gstatus<cr>
 nmap <silent> <leader>ee :e ~/.vim/vimrc<cr>
 
