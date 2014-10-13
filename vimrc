@@ -8,6 +8,8 @@ set laststatus=2
 set incsearch
 set hlsearch
 
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+
 " Clipboard
 if has('windows')
     set clipboard=unnamed
@@ -44,8 +46,17 @@ function! SetupCscope()
         set csto=0
         " add any database in current directory
         lcd %:p:h
-        if filereadable("cscope.out")
-            cs add cscope.out
+        let d = expand('%:p:h')
+        let f = ''
+        while d != '/'
+            if  filereadable(d . '/cscope.out')
+                let f = d . '/cscope.out'
+                break
+            endif
+            let d = fnamemodify(d, ':h')
+        endwhile
+        if f != ''
+            execute 'cs add ' . f
             " else add database pointed to by environment
         elseif $CSCOPE_DB != ""
             cs add $CSCOPE_DB
