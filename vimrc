@@ -28,7 +28,16 @@ nn <silent> <F10> :Gstatus<cr>
 nmap <silent> <leader>ee :e ~/.vim/vimrc<cr>
 
 " Unite
-nnoremap <C-P> :Unite -start-insert file<cr>
+nnoremap <C-P>p :Unite -start-insert file<cr>
+nnoremap <F11> :Unite neomru/file<cr>
+
+" Unite-global
+" let g:unite_source_gtags_result_option = "ctags-x"
+nnoremap <C-P>c :Unite gtags/context<cr>
+nnoremap <C-P>r :Unite gtags/ref<cr>
+nnoremap <C-P>d :Unite gtags/def<cr>
+nnoremap <C-P>g :Unite gtags/grep<cr>
+nnoremap <C-P>l :Unite gtags/completion<cr>
 
 " Autocmds
 autocmd BufEnter * silent! lcd %:p:h
