@@ -64,3 +64,6 @@
 [submodule "bundle/neomru.vim"]
 	path = bundle/neomru.vim
 	url = https://github.com/Shougo/neomru.vim.git
+[submodule "bundle/unite-gtags"]
+	path = bundle/unite-gtags
+	url = https://github.com/hewes/unite-gtags.git
