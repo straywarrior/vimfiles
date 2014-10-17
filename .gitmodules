@@ -67,3 +67,9 @@
 [submodule "bundle/unite-gtags"]
 	path = bundle/unite-gtags
 	url = https://github.com/hewes/unite-gtags.git
+[submodule "bundle/molokai"]
+	path = bundle/molokai
+	url = https://github.com/tomasr/molokai.git
+[submodule "bundle/vim-indent-guides"]
+	path = bundle/vim-indent-guides
+	url = https://github.com/nathanaelkane/vim-indent-guides.git
