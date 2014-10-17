@@ -1,6 +1,19 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
+colorscheme molokai
+let g:molokai_original = 1
+set guioptions-=m
+set guioptions-=l
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+set gcr=a:block-blinkon0
+set guifont=DroidSansMono\ 11
+
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+
 syntax on
 filetype plugin indent on
 set nu
@@ -23,21 +36,26 @@ set shiftwidth=4
 set expandtab
 
 " Key bindings
-let mapleader = ","
+let mapleader = ";"
 nn <silent> <F10> :Gstatus<cr>
 nmap <silent> <leader>ee :e ~/.vim/vimrc<cr>
+vnoremap <Leader>y "+y
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+nmap <Leader>w :w<CR>
+nmap <Leader>q :q<CR>
 
 " Unite
-nnoremap <C-P>p :Unite -start-insert file<cr>
-nnoremap <F11> :Unite neomru/file<cr>
+nnoremap <silent> <C-P>p :Unite -start-insert file<cr>
+nnoremap <silent> <F11> :Unite neomru/file<cr>
 
 " Unite-global
 " let g:unite_source_gtags_result_option = "ctags-x"
-nnoremap <C-P>c :Unite gtags/context<cr>
-nnoremap <C-P>r :Unite gtags/ref<cr>
-nnoremap <C-P>d :Unite gtags/def<cr>
-nnoremap <C-P>g :Unite gtags/grep<cr>
-nnoremap <C-P>l :Unite gtags/completion<cr>
+nnoremap <silent> <C-P>c :Unite gtags/context<cr>
+nnoremap <silent> <C-P>r :Unite gtags/ref<cr>
+nnoremap <silent> <C-P>d :Unite gtags/def<cr>
+nnoremap <silent> <C-P>g :Unite gtags/grep<cr>
+nnoremap <silent> <C-P>l :Unite gtags/completion<cr>
 
 " Autocmds
 autocmd BufEnter * silent! lcd %:p:h
