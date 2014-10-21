@@ -3,20 +3,28 @@ execute pathogen#infect()
 
 colorscheme molokai
 let g:molokai_original = 1
-set guioptions-=m
-set guioptions-=l
-set guioptions-=L
-set guioptions-=r
-set guioptions-=R
-set gcr=a:block-blinkon0
-if has('windows')
-    set guifont=Consolas:h11
-elseif has('unix')
-    set guifont=DroidSansMono\ 11
+if has("gui_running")
+    set guioptions-=m
+    set guioptions-=l
+    set guioptions-=L
+    set guioptions-=r
+    set guioptions-=R
+    set gcr=a:block-blinkon0
+    set cursorline
+    if has('windows')
+        set guifont=Consolas:h11
+    elseif has('unix')
+        set guifont=DroidSansMono\ 11
+    endif
 endif
 
+" Indent Guide
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
+
+" Folding
+set foldmethod=syntax
+set nofoldenable
 
 syntax on
 filetype plugin indent on
