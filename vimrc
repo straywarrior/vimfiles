@@ -9,7 +9,11 @@ set guioptions-=L
 set guioptions-=r
 set guioptions-=R
 set gcr=a:block-blinkon0
-set guifont=DroidSansMono\ 11
+if has('windows')
+    set guifont=Consolas:h11
+elseif has('unix')
+    set guifont=DroidSansMono\ 11
+endif
 
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
@@ -38,7 +42,11 @@ set expandtab
 " Key bindings
 let mapleader = ";"
 nn <silent> <F10> :Gstatus<cr>
-nmap <silent> <leader>ee :e ~/.vim/vimrc<cr>
+if has('windows')
+    nmap <silent> <leader>ee :e ~/vimfiles/vimrc<cr>
+elseif has('unix')
+    nmap <silent> <leader>ee :e ~/.vim/vimrc<cr>
+endif
 vnoremap <Leader>y "+y
 nmap <Leader>p "+p
 nmap <Leader>P "+P
