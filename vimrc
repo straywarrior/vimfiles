@@ -62,7 +62,9 @@ nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
 
 " Unite
-nnoremap <silent> <C-P>p :Unite -start-insert file<cr>
+nnoremap <silent> <C-P><C-P> :Unite -start-insert file<cr>
+nnoremap <silent> <C-P><C-B> :Unite tab -start-insert<cr>
+nnoremap <silent> <C-P><C-R> :Unite buffer -start-insert<cr>
 nnoremap <silent> <F11> :Unite neomru/file<cr>
 
 " Unite-global
