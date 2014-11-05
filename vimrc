@@ -11,10 +11,10 @@ if has("gui_running")
     set guioptions-=R
     set gcr=a:block-blinkon0
     set cursorline
-    if has('windows')
-        set guifont=Consolas:h11
-    elseif has('unix')
+    if has('unix')
         set guifont=DroidSansMono\ 11
+    elseif has('windows')
+        set guifont=Consolas:h11
     endif
 endif
 
@@ -36,10 +36,10 @@ set hlsearch
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 
 " Clipboard
-if has('windows')
-    set clipboard=unnamed
-elseif has('unix')
+if has('unix')
     set clipboard=unnamedplus
+elseif has('windows')
+    set clipboard=unnamed
 endif
 
 " Tab
@@ -50,10 +50,10 @@ set expandtab
 " Key bindings
 let mapleader = ";"
 nn <silent> <F10> :Gstatus<cr>
-if has('windows')
-    nmap <silent> <leader>ee :e ~/vimfiles/vimrc<cr>
-elseif has('unix')
+if has('unix')
     nmap <silent> <leader>ee :e ~/.vim/vimrc<cr>
+elseif has('windows')
+    nmap <silent> <leader>ee :e ~/vimfiles/vimrc<cr>
 endif
 vnoremap <Leader>y "+y
 nmap <Leader>p "+p
