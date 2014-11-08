@@ -9,6 +9,8 @@ if has("gui_running")
     set guioptions-=L
     set guioptions-=r
     set guioptions-=R
+    set guioptions-=t
+    set guioptions-=T
     set gcr=a:block-blinkon0
     set cursorline
     if has('unix')
@@ -16,6 +18,21 @@ if has("gui_running")
     elseif has('windows')
         set guifont=Consolas:h11
     endif
+endif
+
+if has("gui_running")
+    "let g:airline_powerline_fonts = 1
+    if !exists('g:airline_symbols')
+        let g:airline_symbols = {}
+    endif
+
+    " unicode symbols
+    let g:airline_left_sep = '»'
+    let g:airline_right_sep = '«'
+    let g:airline_symbols.linenr = '␊'
+    let g:airline_symbols.branch = '⎇'
+    let g:airline_symbols.paste = 'Þ'
+    let g:airline_symbols.whitespace = 'Ξ'
 endif
 
 " Indent Guide
@@ -37,7 +54,7 @@ set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 
 " Clipboard
 if has('unix')
-    set clipboard=unnamedplus
+    "set clipboard=unnamedplus
 elseif has('windows')
     set clipboard=unnamed
 endif
@@ -108,15 +125,15 @@ function! SetupCscope()
             cs add $CSCOPE_DB
         endif
         " Keys
-        nmap <C-_> :cstag <C-R>=expand("<cword>")<CR><CR>
-        nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-        nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-        nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-        nmap <C-_>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-        nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-        nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-        nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-        nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-_> :tab cstag <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-_>s :tab cs find s <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-_>g :tab cs find g <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-_>c :tab cs find c <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-_>t :tab cs find t <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-_>e :tab cs find e <C-R>=expand("<cword>")<CR><CR>
+        nmap <C-_>f :tab cs find f <C-R>=expand("<cfile>")<CR><CR>
+        nmap <C-_>i :tab cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+        nmap <C-_>d :tab cs find d <C-R>=expand("<cword>")<CR><CR>
     endif
 endfunction
 autocmd FileType c,cpp call SetupCscope()
