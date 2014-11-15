@@ -68,9 +68,9 @@ set expandtab
 let mapleader = ";"
 nn <silent> <F10> :Gstatus<cr>
 if has('unix')
-    nmap <silent> <leader>ee :e ~/.vim/vimrc<cr>
+    nmap <silent> <leader>ee :tabnew ~/.vim/vimrc<cr>
 elseif has('windows')
-    nmap <silent> <leader>ee :e ~/vimfiles/vimrc<cr>
+    nmap <silent> <leader>ee :tabnew ~/vimfiles/vimrc<cr>
 endif
 vnoremap <Leader>y "+y
 nmap <Leader>p "+p
