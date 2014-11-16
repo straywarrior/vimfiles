@@ -77,6 +77,7 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
+nmap <Leader>t :tabnew<CR>
 
 " Unite
 nnoremap <silent> <C-P><C-P> :Unite -start-insert file<cr>
