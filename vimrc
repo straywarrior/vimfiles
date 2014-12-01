@@ -172,6 +172,7 @@ function! SetupCscope()
     endif
 endfunction
 autocmd FileType c,cpp call SetupCscope()
+autocmd FileType c,cpp,python,vim set tw=79
 
 " Markdown
 let g:vim_markdown_folding_disabled=1
