@@ -69,15 +69,17 @@ let mapleader = ";"
 nn <silent> <F10> :Gstatus<cr>
 if has('unix')
     nmap <silent> <leader>ee :tabnew ~/.vim/vimrc<cr>
+    nmap <silent> <leader>es :source ~/.vim/vimrc<cr>
 elseif has('windows')
     nmap <silent> <leader>ee :tabnew ~/vimfiles/vimrc<cr>
+    nmap <silent> <leader>es :tabnew ~/vimfiles/vimrc<cr>
 endif
 vnoremap <Leader>y "+y
 nmap <Leader>p "+p
 nmap <Leader>P "+P
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
-nmap <Leader>t :tabnew<CR>
+nmap <Leader>t :tabnew
 
 " Unite
 nnoremap <silent> <C-P><C-P> :Unite -start-insert file<cr>
@@ -102,6 +104,39 @@ autocmd FileType xml,javascript,html,css,php set ts=2
 autocmd FileType xml,javascript,html,css,php set sts=2
 :let g:PHP_default_indenting = 1
 
+" Session
+function! SetupSession()
+    if ! exists('b:VIM_SESSION_FILE')
+        let d = expand('%:p:h')
+        let f = ''
+        while d != '/'
+            if  filereadable(d . '/.session.vim') || isdirectory(d . '/.git')
+                let b:VIM_SESSION_FILE = d . '/.session.vim'
+                break
+            endif
+            let d = fnamemodify(d, ':h')
+        endwhile
+    endif
+endfunction
+function! SaveSession()
+    if exists('b:VIM_SESSION_FILE')
+        execute 'mksession! ' . b:VIM_SESSION_FILE
+    else
+        mksession! ~/.vim_session.vim
+    endif
+endfunction
+function! LoadSession()
+    if exists('b:VIM_SESSION_FILE')
+        execute 'source ' . b:VIM_SESSION_FILE
+    else
+        source ~/.vim_session.vim
+    endif
+endfunction
+
+nmap <Leader>m :call SaveSession()<CR>
+nmap <Leader>l :call LoadSession()<CR>
+autocmd BufEnter * call SetupSession()
+
 " Cscope
 function! SetupCscope()
     if has("cscope") && ! exists('w:cscope_setup')
@@ -109,7 +144,6 @@ function! SetupCscope()
         set cscopequickfix=s-,c-,d-,i-,t-,e-
         set csto=0
         " add any database in current directory
-        lcd %:p:h
         let d = expand('%:p:h')
         let f = ''
         while d != '/'
