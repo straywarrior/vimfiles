@@ -25,14 +25,6 @@ if has("gui_running")
     if !exists('g:airline_symbols')
         let g:airline_symbols = {}
     endif
-
-    " unicode symbols
-    let g:airline_left_sep = '»'
-    let g:airline_right_sep = '«'
-    let g:airline_symbols.linenr = '␊'
-    let g:airline_symbols.branch = '⎇'
-    let g:airline_symbols.paste = 'Þ'
-    let g:airline_symbols.whitespace = 'Ξ'
 endif
 
 " Indent Guide
@@ -133,9 +125,11 @@ function! LoadSession()
     endif
 endfunction
 
-nmap <Leader>m :call SaveSession()<CR>
-nmap <Leader>l :call LoadSession()<CR>
-autocmd BufEnter * call SetupSession()
+if has('unix')
+    nmap <Leader>m :call SaveSession()<CR>
+    nmap <Leader>l :call LoadSession()<CR>
+    autocmd BufEnter * call SetupSession()
+endif
 
 " Cscope
 function! SetupCscope()
@@ -171,7 +165,11 @@ function! SetupCscope()
         nmap <C-_>d :tab cs find d <C-R>=expand("<cword>")<CR><CR>
     endif
 endfunction
+
+if has('unix')
 autocmd FileType c,cpp call SetupCscope()
+endif
+
 autocmd FileType c,cpp,python,vim set tw=79
 
 " Markdown
