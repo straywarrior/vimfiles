@@ -72,6 +72,8 @@ nmap <Leader>P "+P
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
 nmap <Leader>t :tabnew
+nmap <Leader>s :split
+nmap <Leader>v :vsplit
 
 " Unite
 nnoremap <silent> <C-P><C-P> :Unite -start-insert file<cr>
@@ -94,7 +96,7 @@ autocmd BufEnter * silent! lcd %:p:h
 autocmd FileType xml,javascript,html,css,php set sw=2
 autocmd FileType xml,javascript,html,css,php set ts=2
 autocmd FileType xml,javascript,html,css,php set sts=2
-:let g:PHP_default_indenting = 1
+let g:PHP_default_indenting = 0
 
 " Session
 function! SetupSession()
