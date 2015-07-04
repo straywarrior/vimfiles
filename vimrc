@@ -86,7 +86,7 @@ nnoremap <silent> <F11> :Unite neomru/file<cr>
 nnoremap <silent> <C-P>c :Unite gtags/context<cr>
 nnoremap <silent> <C-P>r :Unite gtags/ref<cr>
 nnoremap <silent> <C-P>d :Unite gtags/def<cr>
-nnoremap <silent> <C-P>g :Unite gtags/grep<cr>
+nnoremap <silent> <C-P>g :Unite gtags/grep<cr><C-R><C-W>
 nnoremap <silent> <C-P>l :Unite gtags/completion<cr>
 
 " Autocmds
