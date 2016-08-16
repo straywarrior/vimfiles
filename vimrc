@@ -1,8 +1,7 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
-colorscheme molokai
-let g:molokai_original = 1
+colorscheme solarized
 if has("gui_running")
     set guioptions-=m
     set guioptions-=l
@@ -16,7 +15,7 @@ if has("gui_running")
     if has('unix')
         set guifont=DroidSansMono\ 11
     elseif has('windows')
-        set guifont=Consolas:h11
+        set guifont=Consolas:h12
     endif
 endif
 
