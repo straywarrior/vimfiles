@@ -1,6 +1,9 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
+let g:username="StrayWarrior"
+let g:email="i@straywarrior.com"
+
 colorscheme solarized
 if has("gui_running")
     set guioptions-=m
@@ -15,7 +18,8 @@ if has("gui_running")
     if has('unix')
         set guifont=DroidSansMono\ 11
     elseif has('windows')
-        set guifont=Consolas:h12
+        let g:templates_name_prefix=".vim-template"
+        set guifont=Monaco:h12
     endif
 endif
 
