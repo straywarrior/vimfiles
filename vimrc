@@ -19,12 +19,17 @@ if has("gui_running")
         set guifont=DroidSansMono\ 11
     elseif has('windows')
         let g:templates_name_prefix=".vim-template"
-        set guifont=Monaco:h12
+        set guifont=Monaco\ for\ Powerline:h11:cANSI
+    endif
+else
+    if $TERM_PROGRAM == 'iTerm.app'
+        let g:airline_powerline_fonts = 1
     endif
 endif
 
+" Vim-Airline settings
 if has("gui_running")
-    "let g:airline_powerline_fonts = 1
+    let g:airline_powerline_fonts = 1
     if !exists('g:airline_symbols')
         let g:airline_symbols = {}
     endif
@@ -33,6 +38,7 @@ endif
 " Indent Guide
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
+set cino=N-s
 
 " Folding
 set foldmethod=syntax
