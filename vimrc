@@ -34,11 +34,13 @@ if has("gui_running")
         let g:airline_symbols = {}
     endif
 endif
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Indent Guide
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
-set cino=N-s
+set cino=N-s,i0,g0
 
 " Folding
 set foldmethod=syntax
@@ -101,8 +103,12 @@ nnoremap <silent> <C-P>l :Unite gtags/completion<cr>
 
 " Autocmds
 autocmd BufEnter * silent! lcd %:p:h
+autocmd FileType cu,cuh,cuda set ft=cuda.c
 
 " Web source indenting
+autocmd FileType yaml,yml set ts=2
+autocmd FileType yaml,yml set sw=2
+autocmd FileType yaml,yml set sts=2
 autocmd FileType xml,javascript,html,css,php set sw=2
 autocmd FileType xml,javascript,html,css,php set ts=2
 autocmd FileType xml,javascript,html,css,php set sts=2
