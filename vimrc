@@ -104,15 +104,19 @@ nnoremap <silent> <C-P>l :Unite gtags/completion<cr>
 " Autocmds
 autocmd BufEnter * silent! lcd %:p:h
 autocmd FileType cu,cuh,cuda set ft=cuda.c
+autocmd BufNewFile,BufRead *.cuh set syntax=cuda.c
 
 " Web source indenting
-autocmd FileType yaml,yml set ts=2
-autocmd FileType yaml,yml set sw=2
-autocmd FileType yaml,yml set sts=2
-autocmd FileType xml,javascript,html,css,php set sw=2
-autocmd FileType xml,javascript,html,css,php set ts=2
-autocmd FileType xml,javascript,html,css,php set sts=2
+autocmd FileType yaml,yml,tex set ts=2
+autocmd FileType yaml,yml,tex set sw=2
+autocmd FileType yaml,yml,tex set sts=2
+autocmd FileType xml,javascript,html,jinja,css,php set sw=2
+autocmd FileType xml,javascript,html,jinja,css,php set ts=2
+autocmd FileType xml,javascript,html,jinja,css,php set sts=2
 let g:PHP_default_indenting = 0
+
+" Go source indenting
+autocmd FileType go set noexpandtab
 
 " Session
 function! SetupSession()
