@@ -87,6 +87,7 @@ nmap <Leader>q :q<CR>
 nmap <Leader>t :tabnew
 nmap <Leader>s :split
 nmap <Leader>v :vsplit
+nmap <Leader>do :Dox<CR>
 
 " Unite
 nnoremap <silent> <C-P><C-P> :Unite -start-insert file<cr>
