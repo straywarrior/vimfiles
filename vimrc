@@ -5,6 +5,7 @@ let g:username="StrayWarrior"
 let g:email="i@straywarrior.com"
 
 let g:solarized_termcolors=256
+set background=dark
 colorscheme solarized
 if has("gui_running")
     set guioptions-=m
@@ -104,7 +105,9 @@ nnoremap <silent> <C-P>g :Unite gtags/grep<cr><C-R><C-W>
 nnoremap <silent> <C-P>l :Unite gtags/completion<cr>
 
 " Autocmds
-autocmd BufEnter * silent! lcd %:p:h
+if ! &diff
+    autocmd BufEnter * silent! lcd %:p:h
+endif
 autocmd FileType cu,cuh,cuda set ft=cuda.c
 autocmd BufNewFile,BufRead *.cuh set syntax=cuda.c
 
