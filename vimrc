@@ -4,7 +4,10 @@ execute pathogen#infect()
 let g:username="StrayWarrior"
 let g:email="i@straywarrior.com"
 
-let g:solarized_termcolors=256
+if !has('gui_running')
+    let g:solarized_termtrans=1
+endif
+"let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
 if has("gui_running")
