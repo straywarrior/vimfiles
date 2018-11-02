@@ -113,6 +113,7 @@ if ! &diff
 endif
 autocmd FileType cu,cuh,cuda set ft=cuda.c
 autocmd BufNewFile,BufRead *.cuh set syntax=cuda.c
+au BufRead,BufNewFile SConstruct,SConscript set filetype=python
 
 " Web source indenting
 autocmd FileType yaml,yml,tex set ts=2
@@ -223,3 +224,6 @@ let g:xmledit_enable_html = 1
 " Gitgutter
 let g:gitgutter_enabled = 0
 nmap <silent> <leader>tg :GitGutterToggle<CR>
+
+" Self-defined commands
+command Rmtw :%s/\s\+$// | :w
