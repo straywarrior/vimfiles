@@ -95,10 +95,10 @@ nmap <Leader>v :vsplit
 nmap <Leader>do :Dox<CR>
 
 " Unite
-nnoremap <silent> <C-P><C-P> :Unite -start-insert file<cr>
+" nnoremap <silent> <C-P><C-P> :Unite -start-insert file<cr>
+nnoremap <silent> <C-P><C-P> :Unite file_rec/async -start-insert<cr>
 nnoremap <silent> <C-P><C-B> :Unite tab -start-insert<cr>
 nnoremap <silent> <C-P><C-R> :Unite buffer -start-insert<cr>
-nnoremap <silent> <F11> :Unite neomru/file<cr>
 
 " Unite-global
 " let g:unite_source_gtags_result_option = "ctags-x"
