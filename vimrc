@@ -88,6 +88,7 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
+nmap <Leader>x :x<CR>
 nmap <Leader>t :tabnew
 nmap <Leader>s :split
 nmap <Leader>v :vsplit
@@ -126,6 +127,11 @@ let g:PHP_default_indenting = 0
 
 " Go source indenting
 autocmd FileType go set noexpandtab
+
+" Scala source indenting
+autocmd FileType scala set ts=2
+autocmd FileType scala set sw=2
+autocmd FileType scala set sts=2
 
 " Session
 function! SetupSession()
@@ -226,4 +232,8 @@ let g:gitgutter_enabled = 0
 nmap <silent> <leader>tg :GitGutterToggle<CR>
 
 " Self-defined commands
-command Rmtw :%s/\s\+$// | :w
+if ! exists(":Rmtw")
+    command Rmtw :%s/\s\+$// | :w
+endif
+
+set complete-=i
