@@ -112,8 +112,7 @@ nnoremap <silent> <C-P>l :Unite gtags/completion<cr>
 if ! &diff
     autocmd BufEnter * silent! lcd %:p:h
 endif
-autocmd FileType cu,cuh,cuda set ft=cuda.c
-autocmd BufNewFile,BufRead *.cuh set syntax=cuda.c
+au BufRead,BufNewFile *.cu,*.cuh set filetype=cuda
 au BufRead,BufNewFile SConstruct,SConscript set filetype=python
 
 " Web source indenting
