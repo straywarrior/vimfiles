@@ -7,7 +7,7 @@ let g:email="i@straywarrior.com"
 if !has('gui_running')
     let g:solarized_termtrans=1
 endif
-"let g:solarized_termcolors=256
+" let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
 if has("gui_running")
@@ -20,15 +20,13 @@ if has("gui_running")
     set guioptions-=T
     set gcr=a:block-blinkon0
     set cursorline
+    set lines=512
+    set columns=512
     if has('unix')
         set guifont=DroidSansMono\ 11
     elseif has('windows')
-        let g:templates_name_prefix=".vim-template"
-        set guifont=Monaco\ for\ Powerline:h11:cANSI
-    endif
-else
-    if $TERM_PROGRAM == 'iTerm.app'
-        let g:airline_powerline_fonts = 1
+        " Nerd Font has some problems for gVim
+        set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12:cANSI
     endif
 endif
 
@@ -37,6 +35,12 @@ if has("gui_running")
     let g:airline_powerline_fonts = 1
     if !exists('g:airline_symbols')
         let g:airline_symbols = {}
+    endif
+else
+    if $TERM_PROGRAM == 'iTerm.app'
+        let g:airline_powerline_fonts = 1
+    elseif !empty($WT_SESSION)
+        let g:airline_powerline_fonts = 1
     endif
 endif
 let g:airline#extensions#tabline#enabled = 1
@@ -229,6 +233,12 @@ let g:xmledit_enable_html = 1
 " Gitgutter
 let g:gitgutter_enabled = 0
 nmap <silent> <leader>tg :GitGutterToggle<CR>
+
+" Template settings
+if has('windows')
+    let g:templates_name_prefix=".vim-template"
+endif
+
 
 " Self-defined commands
 if ! exists(":Rmtw")
