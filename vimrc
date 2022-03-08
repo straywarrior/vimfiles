@@ -85,7 +85,7 @@ if has('unix')
     nmap <silent> <leader>es :source ~/.vim/vimrc<cr>
 elseif has('windows')
     nmap <silent> <leader>ee :tabnew ~/vimfiles/vimrc<cr>
-    nmap <silent> <leader>es :tabnew ~/vimfiles/vimrc<cr>
+    nmap <silent> <leader>es :source ~/vimfiles/vimrc<cr>
 endif
 vnoremap <Leader>y "+y
 nmap <Leader>p "+p
