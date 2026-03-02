@@ -55,8 +55,11 @@ set cino=N-s,i0,g0
 set foldmethod=syntax
 set nofoldenable
 
-syntax on
+" riv.vim plugin configuration
+let g:riv_python_rst_hl = 1
+
 filetype plugin indent on
+syntax on
 set nu
 set laststatus=2
 set incsearch
